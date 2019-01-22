@@ -1,0 +1,19 @@
+<ng-container *ngIf="postForm">
+  <ng-container [formGroup]="postForm">
+    <input type="text" formControlName="title"> <br>
+
+    <ng-container *ngIf="postForm && postForm.controls['title'].dirty && postForm.controls['title'].errors">
+      <ng-container *ngIf="postForm.controls['title'].errors['required']">
+        <h1> Une erreur</h1>
+      </ng-container>
+      <ng-container *ngIf="postForm.controls['title'].errors['minlength']">
+        <h1>Vous avez {{ postForm.controls['title'].errors['minlength'].actualLength }} sur {{ postForm.controls['title'].errors['minlength'].requiredLength }}</h1>
+      </ng-container>
+    </ng-container>
+
+
+    <textarea type="text" formControlName="body"> <br>
+    </textarea>
+    <button (click)="submit()" [disabled]="!postForm.valid">Valider !</button>
+  </ng-container>
+</ng-container>

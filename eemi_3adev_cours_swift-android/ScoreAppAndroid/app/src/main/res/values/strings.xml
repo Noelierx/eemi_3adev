@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Score Keeper</string>
+
+    <string name="more_20">Use Bull or Outer Bull button.</string>
+    <string name="less_1">Do not enter score for a missed hit. </string>
+    <string name="hit_too_many">Your score cannot go under 0. You need to hit</string>
+    <string name="hit_too_many_points">points.</string>
+    <string name="good_luck">Good Luck!</string>
+    <string name="team_a_name">Team A Name</string>
+    <string name="bull">Bull</string>
+    <string name="outer_bull">Outer Bull</string>
+    <string name="single">single</string>
+    <string name="double_button">double</string>
+    <string name="triple">triple</string>
+    <string name="team_b_name">Team B Name</string>
+    <string name="reset">Reset</string>
+    <string name="send_results">Send results</string>
+    <string name="result_subject">Results for 501 dart game</string>
+
+    <string name="not_finished">Game was not finished - cannot send results.</string>
+
+</resources>

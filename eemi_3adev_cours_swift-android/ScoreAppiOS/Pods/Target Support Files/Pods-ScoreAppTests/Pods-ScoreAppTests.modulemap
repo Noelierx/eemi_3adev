@@ -1,0 +1,6 @@
+framework module Pods_ScoreAppTests {
+  umbrella header "Pods-ScoreAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,47 @@
+<div class="col-md-12 col-md-pull-3">
+    <h2>Posts ({{ posts?.length }})</h2>
+    <div *ngFor="let post of posts">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title">{{ post.title }}</h4>
+                <p class="card-text">{{ post.body }}</p>
+                <a [routerLink]="['/post', post.id]" class="card-link">Read more</a>
+            </div>
+        </div>
+    </div>
+    <h2>Le super CRUD Angular</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th data-field="name">Nom de l'article</th>
+            <th data-field="name">Contenu de l'article</th>
+            <th data-field="name">Modifier</th>
+            <th data-field="name">Supprimer</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let post of posts">
+            <td>{{ post.title }}</td>
+            <td>{{ post.body }}</td>
+            <td>
+                <a [routerLink]="['/post', post.id]">
+                    Modifier l'article
+                </a>
+            </td>
+            <td>
+                <a (click)="deleteUser(user)" href="">
+                    Supprimer l'article
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="bottom: 45px; right: 24px;">
+        <a class="btn btn-primary"
+           routerLink="/posts/new">
+            Ajouter un nouvel article
+        </a>
+    </div>
+</div>

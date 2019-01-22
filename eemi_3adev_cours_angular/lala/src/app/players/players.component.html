@@ -1,0 +1,5 @@
+<div class="player" *ngFor="let player of list">
+  <div class="name">{{ player.name }}</div>
+  <div class="color" [style.background-color]="player.color"></div>
+  <div class="level">{{ player.level }}</div>
+</div>

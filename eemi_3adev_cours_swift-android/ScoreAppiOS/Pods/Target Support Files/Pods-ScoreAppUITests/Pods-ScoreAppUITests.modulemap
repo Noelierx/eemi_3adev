@@ -1,0 +1,6 @@
+framework module Pods_ScoreAppUITests {
+  umbrella header "Pods-ScoreAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
