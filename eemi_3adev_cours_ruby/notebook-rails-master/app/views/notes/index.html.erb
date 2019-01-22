@@ -1,0 +1,11 @@
+<p>
+  <%= link_to 'Créer une nouvelle note', new_note_path %>
+</p>
+<ul>
+  <% @notes.each do |note| %>
+    <li>
+      <%= link_to(note.title, note_path(note)) %>
+      <%= render(partial: 'links', locals: {note: note}) %>
+    </li>
+  <% end %>
+</ul>

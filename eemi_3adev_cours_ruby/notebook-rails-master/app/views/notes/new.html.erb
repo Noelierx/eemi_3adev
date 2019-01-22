@@ -1,0 +1,7 @@
+<h1>Création d'une nouvelle note</h1>
+
+<%= form_for(@note) do |f| %>
+  <%= render partial: 'fields', locals: { f: f } %>
+
+  <%= f.submit 'Sauvegarder' %>
+<% end %>
