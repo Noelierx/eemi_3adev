@@ -12,7 +12,7 @@ class BoardManager:
     def __init__(self):
         self.liste_pompiers = [Pompier((2,7))]
         self.liste_feux = [(4,3)]
-        self.size = (15,15)
+        self.size = (15, 15)
 
     def run(self):
         self.liste_pompiers[0].run(
