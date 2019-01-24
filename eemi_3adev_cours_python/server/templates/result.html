@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultat</title>
+</head>
+<body>
+    <h1>Resultat</h1>
+    {% for personne in liste %}
+        <p>Bonjour {{ personne.prenom }} {{ personne.nom }} vous avez {{ personne.age }} ans !</p>
+    {% endfor %}
+</body>
+</html>
