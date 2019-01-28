@@ -1,0 +1,1 @@
+Route::resource('itemCRUD','ItemCRUDController');
