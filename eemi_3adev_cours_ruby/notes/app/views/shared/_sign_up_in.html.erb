@@ -1,0 +1,16 @@
+<nav class="uk-navbar uk-background-primary">
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li class="uk-active">
+        <% if user_signed_in? %>
+         <%#= link_to 'Disconnect', destroy_user_session_path(user_session), method: :delete %>
+          <%= link_to 'Disconnect',
+                      destroy_user_session_path,
+                      method: :delete %>
+        <% else %>
+          <%= link_to('Login', new_user_session_path) %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>

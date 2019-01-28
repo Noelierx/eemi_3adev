@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notes</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css', media: 'all' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js' %>
+  </head>
+  <body>
+    <%#= raise flash.inspect %>
+<!--    <%#= render "shared/sign_up_in" %> mettre partial de manière implicite pour la maintenabilité et éviter la régression-->
+    <%= render partial: "shared/sign_up_in" %>
+    <div class="uk-container">
+      <% flash.each do |level , message| %>
+        <div class="<%= level %>"><%= level %> : <%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

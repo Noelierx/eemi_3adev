@@ -1,0 +1,41 @@
+<h1>Your notes</h1>
+<!--
+rails generate migration add_notes_table
+rake db:migrate
+
+-->
+<p>
+  <%= link_to 'Ajouter une note', new_note_path %>
+</p>
+
+<ul class="notes">
+  <% @notes.each do |note| %>
+    <li>
+      <%= note.title %>
+      &nbsp;&nbsp;
+      <%= link_to 'Edit',
+                  edit_note_path(note) %>
+      &nbsp;&nbsp;
+      <%= link_to 'Delete',
+                  note_path(note),
+                  method: :delete,
+                  data: {confirm: 'Are you sure?'} %>
+      &nbsp;&nbsp;
+      <%= link_to 'Unlink this note',
+                  unlink_note_path(note),
+                  method: :put %>
+    </li>
+  <% end %>
+</ul>
+<h2>Free notes</h2>
+<ul class="notes">
+  <% @free_notes.each do |note| %>
+      <li>
+        <%= note.title %>
+        &nbsp;&nbsp;
+        <%= link_to 'Claim this note',
+                    claim_note_path(note),
+                    method: :put %>
+      </li>
+  <% end %>
+</ul>

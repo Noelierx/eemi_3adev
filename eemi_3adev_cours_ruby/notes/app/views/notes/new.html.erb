@@ -1,0 +1,27 @@
+<h1>New resource</h1>
+<!--
+rails generate migration add_notes_table
+rake db:migrate
+-->
+
+<%= form_for @note do |f| %>
+  <%= render partial: 'fields', locals: { f:f } %>
+
+  <%= f.submit 'Ajouter la note' %>
+<% end %>
+
+<%#= form_for @note do |f| %>
+<!--  <ul class="errors">-->
+    <%# @note.errors.full_messages.each do |e| %>
+<!--      <li><%#= e %></li>-->
+    <%# end %>
+<!--  </ul>-->
+
+  <%#= f.label :title %>
+  <%#= f.text_field :title %>
+
+  <%#= f.label :content %>
+  <%#= f.text_area :content %>
+
+  <%#= f.submit 'Ajouter la note' %>
+<%# end %>
