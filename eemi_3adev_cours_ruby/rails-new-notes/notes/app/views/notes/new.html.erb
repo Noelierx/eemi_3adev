@@ -1,0 +1,8 @@
+<h1>Ajout d une note</h1>
+
+<%= form_for @note do |fo| %>
+
+  <%= render partial: 'fields', locals: { f: fo} %>
+
+  <%= fo.submit 'Ajouter la note' %>
+<% end %>

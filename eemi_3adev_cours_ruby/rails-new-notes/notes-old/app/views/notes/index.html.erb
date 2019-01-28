@@ -1,0 +1,25 @@
+<p>
+  <%= link_to 'Ajouter une note', new_note_path %>
+</p>
+
+<h2>Mes articles</h2>
+<ul class="notes">
+  <% @notes.each do |note| %>
+    <li>
+      <%= note.title %>
+      <%= link_to 'Delete', note_path(note), method: :delete %>
+      <%= link_to 'Edit', edit_note_path(note) %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Articles sans user</h2>
+<ul class="free_notes">
+  <% @free_notes.each do |note| %>
+      <li>
+        <%= note.title %>
+        <%= link_to 'Delete', note_path(note), method: :delete %>
+        <%= link_to 'Edit', edit_note_path(note) %>
+      </li>
+  <% end %>
+</ul>
