@@ -1,0 +1,18 @@
+<h1 mat-dialog-title> {{ pageTitle }}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="postForm" >
+        <mat-form-field>
+          <input matInput type="text" placeholder="Titre du Post" formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="number" placeholder="ID de l'utilisateur" formControlName="userId">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput style="width:100%" placeholder="Contenu du Post" formControlName="body"></textarea>
+        </mat-form-field>
+      </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [disabled]="postForm.invalid" (click)="postMode === 'new' ? createPost() : editPost() " cdkFocusInitial>SAUVEGARDER</button>
+  <button mat-button (click)="dialogRef.close()">ANNULER</button>
+</div>

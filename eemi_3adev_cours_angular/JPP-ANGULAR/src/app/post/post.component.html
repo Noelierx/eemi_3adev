@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Derniers articles</mat-card-title>
+    <mat-card-subtitle>
+        <button mat-button (click)="openPostDialog('new', 0)" >AJOUTER UN ARTICLE</button>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <mat-list>
+          <mat-list-item *ngFor="let post of posts">
+            <h4 mat-line (click)="openPostDialog('edit', post)">{{ post.title | titlecase }}</h4>
+            <p mat-line (click)="openPostDialog('edit', post)">  ID de l'utilisateur : {{ post.userId }} </p>
+            <p mat-line (click)="openPostDialog('edit', post)"> {{ post.body }} </p>
+                <button mat-icon-button  matTooltip="Modifier le Post" (click)="openPostDialog('edit', post)">
+                    <mat-icon style="color:royalblue">edit</mat-icon>
+                 </button>
+                 <button mat-icon-button  matTooltip="Supprimer le Post" (click)="deletePost(post.id)">
+                    <mat-icon style="color:red">delete</mat-icon>
+                 </button>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+      </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>

@@ -8,7 +8,6 @@ import { ArticleEditComponent } from './article-edit/article-edit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ArticlesFilterPipe } from './pipe/articles-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { ArticlesFilterPipe } from './pipe/articles-filter.pipe';
     HomeComponent,
     ArticleComponent,
     ArticleEditComponent,
-    ArticlesFilterPipe
   ],
   imports: [
     BrowserModule,
