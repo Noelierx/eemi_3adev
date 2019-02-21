@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   articles: any = [
     {
       id: 1,
-      title: 'Article de test',
+      title: 'iPhone',
       date: '2018',
       new: false
     },

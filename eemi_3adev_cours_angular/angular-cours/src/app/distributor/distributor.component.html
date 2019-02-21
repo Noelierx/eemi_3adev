@@ -1,0 +1,54 @@
+<div class="container">
+<ng-container *ngFor="let item of items">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Objet</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Selectionner</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.title}}</td>
+      <td>{{item.price}}</td>
+      <td><button type="button" class="btn btn-primary" (click)="comparePrice(item.price, item.id)">Selectionner</button></td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>
+</div>
+  <button type="button" (click)="addMoney(0.01*100)" class="btn btn-primary">1 ct</button>
+  <button type="button" (click)="addMoney(0.02*100)" class="btn btn-secondary">2 cts</button>
+  <button type="button" (click)="addMoney(0.05*100)" class="btn btn-success">5 cts</button>
+  <button type="button" (click)="addMoney(0.10*100)" class="btn btn-danger">10 cts</button>
+  <button type="button" (click)="addMoney(0.20*100)" class="btn btn-warning">20 cts</button>
+  <button type="button" (click)="addMoney(0.50*100)" class="btn btn-info">50 cts</button>
+  <button type="button" (click)="addMoney(1.00*100)" class="btn btn-light">1 €</button>
+  <button type="button" (click)="addMoney(2.00*100)" class="btn btn-dark">2 €</button>
+  <button type="button" (click)="addMoney(5.00*100)" class="btn btn-outline-primary">5 €</button>
+  <button type="button" (click)="addMoney(10.00*100)" class="btn btn-outline-secondary">10 €</button>
+<h1>{{ total/100 }}</h1>
+
+    <div class="container">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" formControlName="firstname">
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" class="form-control" formControlName="lastname">
+        </div>
+
+        <div class="form-group">
+          <label>Adress</label>
+          <input type="text" class="form-control" formControlName="address">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
