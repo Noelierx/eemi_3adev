@@ -13,7 +13,7 @@ export class DistributorComponent implements OnInit {
 
     productId: number;
     priceProduct: number;
-    
+
     registerForm = new FormGroup({
         firstname: new FormControl('', Validators.minLength(2)),
         lastname: new FormControl('', Validators.minLength(2)),
