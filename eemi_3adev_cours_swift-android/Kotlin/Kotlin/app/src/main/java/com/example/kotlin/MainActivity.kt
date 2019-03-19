@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val siteTitle = findViewById<TextView>(R.id.siteTitle)
-        val getTitle = findViewById<Button>(R.id.getTitle)
+        val label = findViewById<TextView>(R.id.siteTitle)
+        val button = findViewById<Button>(R.id.getTitle)
 
 
-        getTitle.setOnClickListener {v ->
+        button.setOnClickListener {v ->
             val url = findViewById<EditText>(R.id.url)
 
             println(url.text)
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                     "There is no title"
                 }
                 runOnUiThread {
-                    siteTitle.setText(sub)
+                    label.setText(sub)
                 }
             })
             myThread.start()
