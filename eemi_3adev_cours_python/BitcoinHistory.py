@@ -1,7 +1,5 @@
 """
-Exercice : On prend un graph comme au dessus
-On a plus de 5 valeurs
-On regarde le 5ème jours, on fait la moyenne des 5 derniers et on regarde si notre point et au dessus ou en dessous de la moyenne
+Exercice : 
     Rouge en dessous
     Vert au dessus
 Si J5 = 2, Moyenne = 4 : J5 est rouge
