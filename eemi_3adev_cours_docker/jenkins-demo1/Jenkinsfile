@@ -1,0 +1,23 @@
+node {
+   stage('Preparation + Git clone') {
+     git 'https://github.com/Noelierx/eemi_3adev/eemi_3adev_cours_docker/jenkins-demo1'
+   }
+   
+   stage('install') {
+     nodejs(nodeJSInstallationName: 'NodeJS10') {
+       sh 'npm install'
+     }
+   }
+   
+   stage('test') {
+     nodejs(nodeJSInstallationName: 'NodeJS10') {
+       sh 'npm test'
+     }
+   }
+   
+   stage('docker build Image and Push') {
+     docker.withRegistry('', 'eemi-devops-hubdocker') {
+       def app = docker.build("ID/NOMAPP:$BUILD_NUMBER", '.').push()
+     }
+   }
+}
