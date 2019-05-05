@@ -1,4 +1,4 @@
-job('My Job 1') {
+job('Job') {
     scm {
         git('https://github.com/Noelierx/eemi_3adev/eemi_3adev_cours_docker/jenkins-demo1') {  node -> 
             node / gitConfigName('noelie.roux')
