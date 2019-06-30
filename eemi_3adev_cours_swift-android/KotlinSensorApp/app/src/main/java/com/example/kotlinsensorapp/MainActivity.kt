@@ -14,7 +14,31 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private val sensorManager: SensorManager by lazy {
         getSystemService(Context.SENSOR_SERVICE) as SensorManager
     }
+    
+    override fun onSensorChanged(event: SensorEvent?) {
+        if (event !== null) {
+            var colorId : Int? = null
+// changement de la couleur du layout en fonction des axes X,Y et Z
+            val (x, y, z) = getScoresFromAxis(event)
+            xElement.text = x.toString()
+            yElement.text = y.toString()
+            zElement.text = z.toString()
 
+            when {
+                z == 10 -> colorId = R.color.colorPrimary
+                y == 10 -> colorId = R.color.colorAccent
+                x == 10 -> colorId = R.color.colorPrimaryDark
+            }
+
+            if (colorId !== null) {
+                mainlayout.setBackgroundResource(colorId)
+            }
+        }
+    }
+
+    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
+    }
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,28 +75,5 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         sensorManager.unregisterListener(this)
     }
 
-    override fun onSensorChanged(event: SensorEvent?) {
-        if (event !== null) {
-            var colorId : Int? = null
-
-            val (x, y, z) = getScoresFromAxis(event)
-            xElement.text = x.toString()
-            yElement.text = y.toString()
-            zElement.text = z.toString()
-
-            when {
-                z == 10 -> colorId = R.color.colorPrimary
-                y == 10 -> colorId = R.color.colorAccent
-                x == 10 -> colorId = R.color.colorPrimaryDark
-            }
-
-            if (colorId !== null) {
-                mainlayout.setBackgroundResource(colorId)
-            }
-        }
-    }
-
-    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
-    }
 }
 
