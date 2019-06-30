@@ -1,0 +1,30 @@
+<router-outlet></router-outlet>
+
+<div class="pieces">
+    <button (click)="addPiece(1)">1 centime</button>
+    <button (click)="addPiece(2)">2 centimes</button>
+    <button (click)="addPiece(5)">5 centimes</button>
+    <button (click)="addPiece(10)">10 centimes</button>
+    <button (click)="addPiece(20)">20 centimes</button>
+    <button (click)="addPiece(50)">50 centimes</button>
+    <button (click)="addPiece(100)">1 euro</button>
+    <button (click)="addPiece(200)">2 euros</button>
+    <button (click)="addPiece(500)">5 euros</button>
+    <button (click)="addPiece(1000)">10 euros</button>
+</div>
+
+<div class="monnaie">{{ amount | amountEuro : '€' }}</div>
+
+<select [(ngModel)]="productSelected">
+    <option *ngFor="let product of products" [ngValue]="product.id">{{ product.name }} - {{ product.price | amountEuro : '€' }}</option>
+</select>
+
+<button (click)="buy()">Acheter</button>
+
+<ng-container *ngIf='showInfo'>
+    <input type="text" [(ngModel)]="firstname" placeholder="Votre Prénom">
+    <input type="text" [(ngModel)]="lastname" placeholder="Votre Nom">
+    <input type="text" [(ngModel)]="address" placeholder="votre adresse">
+
+    <button (click)="submitInfo()">Valider</button>
+</ng-container>

@@ -1,0 +1,10 @@
+Nombres limite de gifs à afficher: <input type="number" [(ngModel)]="limit">
+Chercher un gif sur Giphy: <input type="text" [(ngModel)]="term" (keyup.enter)="findGif()">&nbsp;
+<input type="button" value="Rechercher" (click)="findGif()">
+
+<br/>
+
+
+<a *ngFor="let gif of gifs" [href]="gif.url">
+    <img src="http://i.giphy.com/{{gif.id}}.gif" title="image {{gif.id}}">
+</a>
