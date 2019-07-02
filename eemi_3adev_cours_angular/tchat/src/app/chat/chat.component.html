@@ -2,9 +2,8 @@
   <ng-container *ngIf=" auth.user$ | async as user">
     <div class="top">
       <p><a class="btn btn-primary mb-2" routerLink="/">Retournez sur la liste de tous les chats</a><br/>
-        <span class="tag is-success">
-          https://tchat-9ba4f.firebaseapp.com/chats/{{ chat.id }}
-        </span>
+        <input type="text" value="https://tchat-9ba4f.firebaseapp.com/chats/{{ chat.id }}" #userinput>
+        <button (click)="copyInputMessage(userinput)" value="click to copy" >Copier l'url</button>
         <span>Vous pouvez copier/coller l'url pour envoyer votre chat à vos amis pour qu'ils vous rejoignent</span>
       </p>
     </div>

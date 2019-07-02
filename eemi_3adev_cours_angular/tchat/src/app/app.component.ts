@@ -9,4 +9,10 @@ import { ChatService } from './services/chat.service';
 })
 export class AppComponent {
   constructor(public auth: AuthService, public cs: ChatService) {}
+    /* To copy Text from Textbox */
+    copyInputMessage(inputElement){
+        inputElement.select();
+        document.execCommand('copy');
+        inputElement.setSelectionRange(0, 0);
+    }
 }
