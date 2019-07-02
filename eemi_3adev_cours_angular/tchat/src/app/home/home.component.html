@@ -1,0 +1,36 @@
+<h1>Bienvenue sur notre TP d'Angular</h1>
+
+<div class="login">
+  <div *ngIf=" auth.user$ | async as user; else login">
+    <table #chatBox class="table chat">
+        <tr>
+          <td>
+            <div class="user">
+              <img [src]="user.photoURL" width="50px">
+            </div>
+          </td>
+          <td>
+            <div><span class="tag is-dark">{{ user.displayName }}</span></div>
+          </td>
+          <td><p>{{ msg.content }}</p></td>
+          <td><button class="btn btn-danger" (click)="auth.signOut()">Sign Out</button></td>
+        </tr>
+    </table>
+    <hr>
+    <button class="btn btn-primary" routerLink="/chats/8KMSndvewa5CORa08nrZ">Rejoindre le chat général</button>
+    <button class="btn btn-primary" (click)="cs.create()">Créer un nouveau chat</button>
+    <hr>
+    <h3>Voir la liste de tous les chats auxquels vous participez</h3>
+
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let chat of userChats$ | async">
+        <a [routerLink]="'chats/' + chat.id">{{ chat.id }}</a><br/><span class="badge badge-primary badge-pill">{{ chat.messages.length }}</span> Messages
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #login>
+    <button class="button" class="btn btn-google" (click)="auth.googleSignIn()">Se connecter avec Google</button>
+  </ng-template>
+
+</div>
