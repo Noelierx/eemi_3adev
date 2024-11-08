@@ -23,7 +23,7 @@
     "@angular/router": "~7.0.0",
     "angular5-social-login": "^1.0.9",
     "angularfire2": "^5.2.1",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^5.0.0",
     "bootswatch": "^4.2.1",
     "core-js": "^2.5.4",
     "firebase": "^10.10.0",
